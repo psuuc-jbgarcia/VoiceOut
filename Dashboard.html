@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+  </head>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+    crossorigin="anonymous"
+  />
+  <style>
+    .profile-section {
+      position: fixed;
+      margin-left: -40px;
+      z-index: 100;
+      padding: 2rem;
+      width: 15rem;
+      background-color: #747373;
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    .content {
+      margin-left: 280px;
+      padding: 2rem;
+    }
+    #write:hover {
+      background-color: green;
+    }
+    #fill:hover {
+      background-color: green;
+    }
+    #home:hover {
+      text-decoration: underline;
+    }
+    #logout:hover {
+      background-color: red;
+    }
+    #blogsec {
+      margin-left: 200px;
+    }
+  </style>
+  <body>
+    <!--Nav-->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+      <a class="navbar-brand mx-3 mx-lg-5" href="#">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="25"
+          height="25"
+          fill="currentColor"
+          class="bi bi-megaphone-fill"
+          viewBox="0 0 16 16"
+        >
+          <!-- SVG path code -->
+        </svg>
+        <b class="text-success"> <i>V</i>OICEOUT</b>
+      </a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarScroll"
+        aria-controls="navbarScroll"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav me-auto my-2 my-lg-0 text-center">
+          <li class="nav-item">
+            <a
+              class="nav-link active display-4"
+              aria-current="page"
+              href="index.html"
+              id="home"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link active display-4"
+              aria-current="page"
+              href="index.html"
+              id="home"
+              >Topics</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link active display-4"
+              aria-current="page"
+              href="index.html"
+              id="home"
+              >Stories</a
+            >
+          </li>
+        </ul>
+
+        <!-- Search Bar -->
+        <form class="d-flex">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search a title"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+
+    <section class="mt-5 mx-5">
+      <main class="d-flex flex-nowrap bg-dark">
+        <div
+          class="profile-section d-flex flex-column flex-shrink-0 p-3 text-bg-dark text-center"
+        >
+          <div class="profile-details">
+            <img
+              src="aboutme.jpg"
+              alt=""
+              width="100"
+              height="100"
+              class="rounded-circle me-2"
+            />
+            <h3 class="text-white">Jerico Garcia</h3>
+            <p class="text-white">Age: 18</p>
+          </div>
+          <hr />
+          <div class="ml-2">
+            <ul class="nav nav-pills flex-column mb-auto">
+              <li>
+                <a href="#" class="nav-link text-white" id="write"> Write </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link text-white" id="fill">
+                  Fill up personal information
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link text-white" id="fill">
+                  Membership
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link text-white" id="fill"> Setting </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link text-white" id="fill"> Help </a>
+              </li>
+            </ul>
+          </div>
+          <hr />
+          <ul class="nav nav-pills flex-column">
+            <li>
+              <a href="SignIn.html" class="nav-link text-white" id="logout">
+                Log out
+              </a>
+            </li>
+          </ul>
+          <hr />
+        </div>
+        <section id="blogsec">
+          <main class="container bg-light">
+            <div
+              class="p-4 p-md-5 mb-4 rounded text-bg-dark"
+              style="
+                background-image: linear-gradient(
+                    rgb(0, 0, 0, 0.5),
+                    rgb(0, 0, 0)
+                  ),
+                  url(blog.png);
+              "
+            >
+              <div class="px-0">
+                <h1 class="display-4 fst-italic">
+                  Microsoft Build brings AI tools to the forefront for
+                  developers
+                </h1>
+                <p>
+                  May 23, 2023 | Frank X. Shaw - Chief Communications Officer,
+                  Microsoft
+                </p>
+                <p class="lead my-3">
+                  It’s already been a landmark year for the industry, starting
+                  in January with the announcement of an extension of our
+                  partnership with OpenAI to accelerate AI breakthroughs and to
+                  ensure these benefits are broadly shared with the world.
+                </p>
+                <p class="lead mb-0">
+                  <a
+                    href="https://blogs.microsoft.com/blog/2023/05/23/microsoft-build-brings-ai-tools-to-the-forefront-for-developers/ "
+                    target="_blank"
+                    class="text-white fw-bold"
+                    >Read more...</a
+                  >
+                </p>
+              </div>
+            </div>
+
+            <div class="row mb-2 border">
+              <div class="col-md-6">
+                <div
+                  class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+                >
+                  <div class="col-md-5">
+                    <img
+                      src="vietnamese-coffee-4166.webp"
+                      alt="Article Image 1"
+                      class="img-fluid"
+                    />
+                  </div>
+                  <div class="col p-4 d-flex flex-column position-static">
+                    <strong class="d-inline-block mb-2 text-success"
+                      >Latest Post</strong
+                    >
+                    <h3 class="mb-0">Vietnamese Coffee</h3>
+                    <div class="mb-1 text-body-secondary">
+                      Posted May 16, 2023 by Stephanie
+                    </div>
+                    <p class="card-text mb-auto">
+                      Sweet and creamy, with a huge kick of intense coffee
+                      flavor, Vietnamese coffee is the caffeine hit I want all
+                      day, every day.
+                    </p>
+                    <a
+                      href="https://iamafoodblog.com/vietnamese-coffee/"
+                      target="_blank"
+                      >Read more</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!--Blog2-->
+              <div class="col-md-6">
+                <div
+                  class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+                >
+                  <div class="col-md-5">
+                    <img
+                      src="tumblr_5ae09e00ff530fadf0b977acb8d31b25_211dd60c_500.jpg"
+                      alt="Article Image 1"
+                      class="img-fluid"
+                    />
+                  </div>
+                  <div class="col p-4 d-flex flex-column position-static">
+                    <strong class="d-inline-block mb-2 text-success"
+                      >Latest Post</strong
+                    >
+                    <h3 class="mb-0">
+                      Women of Color, in Solidarity: Hiatus Announcement
+                    </h3>
+                    <div class="mb-1 text-body-secondary">8th March 2018</div>
+                    <p class="mb-auto">
+                      Did you know that a few days ago (March 3rd, to be exact),
+                      marked Women of Color, in Solidarity turning five years
+                      old?
+                    </p>
+                    <a
+                      href="https://wocinsolidarity.tumblr.com/"
+                      target="_blank"
+                      class="stretched-link"
+                      >Read more</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!--Blog3-->
+              <div class="col-md-6">
+                <div
+                  class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+                >
+                  <div class="col-md-5">
+                    <img
+                      src="arountheworld.webp"
+                      alt="Article Image 1"
+                      class="img-fluid"
+                    />
+                  </div>
+                  <div class="col p-4 d-flex flex-column position-static">
+                    <strong class="d-inline-block mb-2 text-success"
+                      >Latest Post</strong
+                    >
+                    <h3 class="mb-0">
+                      Our Adventure Getting Lice, and Tips to Stop It
+                    </h3>
+                    <div class="mb-1 text-body-secondary">
+                      Published: May 17, 2023 - Last updated: May 21, 2023
+                    </div>
+                    <p class="mb-auto"></p>
+                    <a
+                      href="https://www.aroundtheworldl.com/head-lice-treatment-experience/"
+                      target="_blank"
+                      class="stretched-link"
+                      >Read more</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!--Blog4-->
+              <div class="col-md-6">
+                <div
+                  class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+                >
+                  <div class="col-md-5">
+                    <img
+                      src="Picture2.jpg"
+                      alt="Article Image 1"
+                      class="img-fluid"
+                    />
+                  </div>
+                  <div class="col p-4 d-flex flex-column position-static">
+                    <strong class="d-inline-block mb-2 text-success"
+                      >Latest Post</strong
+                    >
+                    <h3 class="mb-0">THE LOW DOWN ON HIGH TEA</h3>
+                    <div class="mb-1 text-body-secondary">
+                      Across the Pond Student Ambassador on 6th Jul 2021
+                    </div>
+                    <p class="mb-auto">
+                      This is a wider card with supporting text below as a High
+                      tea… it evokes so much history and so much fun! Oxford is
+                      famous for some of the oldest cafes in England, including
+                      the beautiful The Grand Cafe,
+                    </p>
+                    <a
+                      href="https://www.studyacrossthepond.com/blog/the-low-down-on-high-tea"
+                      target="_blank"
+                      class="stretched-link"
+                      >Read more</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+        </section>
+      </main>
+    </section>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
