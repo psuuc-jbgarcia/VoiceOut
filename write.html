@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post a Blog</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Righteous&display=swap" rel="stylesheet">
+    <style>
+        /* Add your custom CSS styles here */
+        body {
+            background-color: #eaf2e6;
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .post-form {
+            background-color: #c2e0c6;
+            border-radius: 5px;
+            padding: 20px;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #3a7d43;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #3a7d43;
+        }
+
+        input[type="text"],
+  textarea,
+  input[type="file"] {
+    width: 100%;
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    max-width: 100%; /* Add this line to limit the width of input fields */
+  }
+
+        input[type="file"] {
+            margin-top: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #3a7d43;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #265e32;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #c2e0c6;
+            padding: 10px 0;
+            margin-top: 20px;
+            color: #3a7d43;
+        }
+
+        .blog-container {
+            margin-top: 20px;
+        }
+
+        .blog-post {
+            background-color: #c5f5d9;
+            padding: 20px;
+            margin-bottom: 10px;
+            overflow: auto;
+        }
+
+        .blog-post h3 {
+            margin-top: 0;
+        }
+
+       
+            .blog-post p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* Remove the white-space property */
+  /* white-space: nowrap; */
+  /* Add the word-wrap property */
+  word-wrap: break-word;
+}
+
+
+
+        .blog-post img {
+            max-width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .comments-container {
+            margin-top: 10px;
+        }
+
+        .comment-form input[type="text"],
+        .comment-form textarea {
+            width: 100%;
+            padding: 5px;
+            border: none;
+            border-radius: 3px;
+            margin-bottom: 5px;
+        }
+
+        .comment-form input[type="submit"] {
+            background-color: #3a7d43;
+            color: #fff;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .comment-form input[type="submit"]:hover {
+            background-color: #265e32;
+        }
+
+        .comment {
+            background-color: #f2f2f2;
+            padding: 5px;
+            margin-bottom: 5px;
+            font-size: 12px; 
+        }
+
+        .comment p {
+            margin: 0;
+        }
+
+        .comment-author {
+            font-weight: bold;
+        }
+        #top{
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+            <a class="navbar-brand mx-3 mx-lg-5" href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="25"
+                fill="currentColor"
+                class="bi bi-megaphone-fill"
+                viewBox="0 0 16 16"
+              >
+                <!-- SVG path code -->
+              </svg>
+              <b class="text-success"> <i>V</i>OICEOUT</b>
+            </a>
+      
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarScroll"
+              aria-controls="navbarScroll"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+      
+            <div class="collapse navbar-collapse" id="navbarScroll">
+              <ul class="navbar-nav me-auto my-2 my-lg-0 text-center">
+                <li class="nav-item">
+                  <a
+                    class="nav-link active display-4"
+                    aria-current="page"
+                    href="Dashboard.html"
+                    id="home"
+                    >Back to Dashboard</a
+                  >
+                </li>
+               
+              </ul>
+      
+              
+            </div>
+          </nav>
+          
+    </header>
+    <section class="bg-dark-subtle d-flex align-items-center min-vh-100">
+    <div class="container ">
+        <div class="post-form">
+            <h2>Post a Blog</h2>
+            <form id="blogForm" action="#" method="POST">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required>
+
+                <label for="author">Author:</label>
+                <input type="text" id="author" name="author" required>
+
+                <label for="content">Content:</label>
+                <textarea id="content" name="content" rows="8" required></textarea>
+
+                <label for="image">Image:</label>
+                <input type="file" id="image" name="image">
+
+                <input type="submit" value="Post Blog">
+            </form>
+        </div>
+
+        <div class="blog-container" id="blogContainer">
+            <!-- The posted blogs will be dynamically added here -->
+        </div>
+    </div>
+</section>
+    <script>
+      document.getElementById("blogForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent form submission
+
+  // Get form values
+  var title = document.getElementById("title").value;
+  var author = document.getElementById("author").value;
+  var content = document.getElementById("content").value;
+  var image = document.getElementById("image").files[0]; // Retrieve the selected image file
+
+  // Create a new blog post element
+  var blogPost = document.createElement("div");
+  blogPost.classList.add("blog-post");
+
+  var heading = document.createElement("h3");
+  heading.textContent = title;
+
+  var authorPara = document.createElement("p");
+  authorPara.textContent = "By: " + author;
+
+  var contentPara = document.createElement("p");
+  contentPara.textContent = content;
+
+  blogPost.appendChild(heading);
+  blogPost.appendChild(authorPara);
+  blogPost.appendChild(contentPara);
+
+  if (image) {
+    var imageElement = document.createElement("img");
+    imageElement.src = URL.createObjectURL(image); // Set the source of the image element to the local file URL
+    blogPost.appendChild(imageElement); // Append the image to the blog post
+  }
+
+  // Create a container for comments
+  var commentsContainer = document.createElement("div");
+  commentsContainer.classList.add("comments-container");
+
+  // Create a form for adding comments
+  var commentForm = document.createElement("form");
+  commentForm.classList.add("comment-form");
+
+  var commentAuthorInput = document.createElement("input");
+  commentAuthorInput.type = "text";
+  commentAuthorInput.placeholder = "Your Name";
+  commentAuthorInput.required = true;
+
+  var commentContentTextarea = document.createElement("textarea");
+  commentContentTextarea.placeholder = "Add a comment";
+  commentContentTextarea.required = true;
+
+  var commentSubmitButton = document.createElement("input");
+  commentSubmitButton.type = "submit";
+  commentSubmitButton.value = "Post Comment";
+
+  commentForm.appendChild(commentAuthorInput);
+  commentForm.appendChild(commentContentTextarea);
+  commentForm.appendChild(commentSubmitButton);
+
+  // Handle comment submission
+  commentForm.addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent form submission
+
+    var commentAuthor = commentAuthorInput.value;
+    var commentContent = commentContentTextarea.value;
+
+    // Create a new comment element
+    var comment = document.createElement("div");
+    comment.classList.add("comment");
+
+    var commentAuthorPara = document.createElement("p");
+    commentAuthorPara.classList.add("comment-author");
+    commentAuthorPara.textContent = commentAuthor;
+
+    var commentContentPara = document.createElement("p");
+    commentContentPara.textContent = commentContent;
+
+    var commentTimestamp = document.createElement("p");
+    commentTimestamp.classList.add("comment-timestamp");
+    commentTimestamp.textContent = getCurrentTimestamp();
+
+    comment.appendChild(commentAuthorPara);
+    comment.appendChild(commentContentPara);
+    comment.appendChild(commentTimestamp);
+
+    // Append the comment to the comments container
+    commentsContainer.appendChild(comment);
+
+    // Clear comment form fields
+    commentAuthorInput.value = "";
+    commentContentTextarea.value = "";
+  });
+
+  // Append the comments container and comment form to the blog post
+  blogPost.appendChild(commentsContainer);
+  blogPost.appendChild(commentForm);
+
+  // Append the blog post to the container
+  var blogContainer = document.getElementById("blogContainer");
+  blogContainer.appendChild(blogPost);
+
+  // Clear form fields
+  document.getElementById("title").value = "";
+  document.getElementById("author").value = "";
+  document.getElementById("content").value = "";
+  document.getElementById("image").value = null; // Reset the input file element
+});
+
+// Function to generate a random name
+function generateRandomName() {
+    var names = [
+  "Jc Reyes",
+  "Jane Carla Bayan",
+  "Jerico Garcia",
+  "Joshua Reyes",
+  "Chris Paul",
+  "Lebron James",
+  "Raymart Cabico",
+  "Emma Thompson",
+  "Sophia Lee",
+  "Oliver Davis",
+  "Isabella Martinez",
+  "Noah Wilson",
+  "Mia Johnson",
+  "Jacob Brown",
+  "Ava Taylor",
+  "William Anderson",
+  "Charlotte Thomas",
+  "James Rodriguez",
+  "Emily Turner",
+  "Benjamin Cooper"
+];
+
+  var randomIndex = Math.floor(Math.random() * names.length);
+  return names[randomIndex];
+}
+
+// Function to get the current timestamp
+function getCurrentTimestamp() {
+  var currentTimestamp = new Date().toLocaleString();
+  return currentTimestamp;
+}
+
+// Function to generate a random comment
+function generateRandomComment() {
+    var comments = [
+  "Wow, this blog is beautiful!",
+  "Great work on the blog post!",
+  "I love the content of this blog.",
+  "This is an insightful article.",
+  "Awesome job!",
+  "Impressive writing!",
+  "Very informative!",
+  "I'm impressed with your work.",
+  "Fantastic blog post!",
+  "Well done on this article!",
+  "This blog is amazing!",
+  "You've covered the topic excellently!",
+  "I learned a lot from this post.",
+  "This is top-notch writing!",
+  "Your blog is a great resource.",
+  "Kudos to the author!",
+  "I appreciate the effort put into this.",
+  "This deserves more recognition.",
+  "I'll definitely share this with others.",
+  "Looking forward to more articles like this!"
+];
+
+  var randomIndex = Math.floor(Math.random() * comments.length);
+  return comments[randomIndex];
+}
+
+// Function to add a random comment every 5 seconds
+setInterval(function() {
+  var blogPosts = document.querySelectorAll(".blog-post");
+
+  blogPosts.forEach(function(blogPost) {
+    var commentsContainer = blogPost.querySelector(".comments-container");
+
+    if (commentsContainer.childElementCount < 5) {
+      var commentAuthorInput = document.createElement("input");
+      commentAuthorInput.type = "text";
+      commentAuthorInput.placeholder = "Your Name";
+      commentAuthorInput.required = true;
+      commentAuthorInput.value = generateRandomName();
+
+      var commentContentTextarea = document.createElement("textarea");
+      commentContentTextarea.placeholder = "Add a comment";
+      commentContentTextarea.required = true;
+      commentContentTextarea.value = generateRandomComment();
+
+      var comment = document.createElement("div");
+      comment.classList.add("comment");
+
+      var commentAuthorPara = document.createElement("p");
+      commentAuthorPara.classList.add("comment-author");
+      commentAuthorPara.textContent = commentAuthorInput.value;
+
+      var commentContentPara = document.createElement("p");
+      commentContentPara.textContent = commentContentTextarea.value;
+
+      var commentTimestamp = document.createElement("p");
+      commentTimestamp.classList.add("comment-timestamp");
+      commentTimestamp.textContent = getCurrentTimestamp();
+
+      comment.appendChild(commentAuthorPara);
+      comment.appendChild(commentContentPara);
+      comment.appendChild(commentTimestamp);
+
+      commentsContainer.appendChild(comment);
+    }
+  });
+}, 5000);
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+</html>
