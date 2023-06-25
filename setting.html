@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Website - Settings</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <style>
+    .image-container {
+      text-align: center;
+    }
+
+    .image-container img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .btn{
+ width: 20%;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+        <a class="navbar-brand mx-3 mx-lg-5" href="#">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="25"
+            height="25"
+            fill="currentColor"
+            class="bi bi-megaphone-fill"
+            viewBox="0 0 16 16"
+          >
+            <!-- SVG path code -->
+          </svg>
+          <b class="text-success"> <i>V</i>OICEOUT</b>
+        </a>
+  
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarScroll"
+          aria-controls="navbarScroll"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div class="collapse navbar-collapse" id="navbarScroll">
+          <ul class="navbar-nav me-auto my-2 my-lg-0 text-center">
+            <li class="nav-item">
+              <a
+                class="nav-link active display-4"
+                aria-current="page"
+                href="Dashboard.html"
+                id="home"
+                >Back to Dashboard</a
+              >
+            </li>
+           
+          </ul>
+  
+          
+        </div>
+      </nav>
+      
+  </header>
+
+  <!-- Page Content -->
+  <main class="container py-5 bg-dark-subtle">
+    <h1 class="text-center text-success">Setting</h1>
+
+    <div class="row justify-content-center">
+      <div class="col-md-4 text-center">
+        <div class="image-container">
+          <img id="preview" src="aboutme.jpg" alt="Profile Picture">
+        </div>
+      </div>
+      <div class="col-md-8">
+        <form>
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" value="Jerico B. Garcia" readonly>
+          </div>
+          <div class="mb-3">
+            <label for="name" class="form-label">Age</label>
+            <input type="text" class="form-control" id="name" value="18" readonly>
+          </div>
+          <div class="mb-3">
+            <label for="name" class="form-label">Country</label>
+            <input type="text" class="form-control" id="name" value="Phillipines" readonly>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" value="admingarcia@gmail.com" readonly>
+          </div>
+          <div class="mb-3">
+            <label for="bio" class="form-label">Bio</label>
+            <textarea class="form-control" id="bio" rows="3" readonly></textarea>
+            <button id="editBioBtn" class="btn btn-success mt-2">Edit</button>
+          </div>
+          
+        </form>
+      </div>
+    </div>
+  </main>
+  <script>
+     var bioTextArea = document.getElementById("bio");
+  var editBioBtn = document.getElementById("editBioBtn");
+
+  // Function to toggle the readonly attribute of the textarea
+  function toggleBioEditMode(event) {
+    event.preventDefault();
+    bioTextArea.readOnly = !bioTextArea.readOnly;
+    if (bioTextArea.readOnly) {
+      editBioBtn.innerText = "Edit";
+    } else {
+      editBioBtn.innerText = "Save";
+    }
+  }
+
+  // Add event listener to the edit button
+  editBioBtn.addEventListener("click", toggleBioEditMode);
+
+  function save(){
+    alert("Save successfuly");
+  }
+  </script>
+  <!-- Bootstrap JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
